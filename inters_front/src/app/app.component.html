@@ -1,2 +1,82 @@
+<body class="landing-page">
+  <ng-container *ngIf="!logged">
+    <h2>Login</h2>
+    <div class="log">
+      <fieldset>
+        <label>Username: </label>
+        <input type="text" [(ngModel)]="username">
+      </fieldset>
+      <fieldset>
+        <label>Password: </label>
+        <input type="password" [(ngModel)]="password">
+      </fieldset>
+      <button class="batyrma" (click)="login()">Login</button>
+    </div>
+  </ng-container>
+  
+  
+  
+  <ng-container   *ngIf="logged">
+      <button class="batyrma" (click)="logout()">Log out</button>
+      
+      
+      <div class="page-wrapper">
+        <header class="header text-center">
+            <div class="container">
+                <div class="branding">
+                    <h1 class="logo">
+                        
+                        <span class="text-highlight">inter</span><span class="text-bold">Section</span>
+                    </h1>
+                </div> 
+            </div> 
+        </header> 
+        
+        <section class="cards-section text-center">
+            <div class="container">
+                <h2 >Let'go with us!</h2>
+                <div class="intro">
+                    <p>Welcome to intersection. I'll write more on next week.</p>
+                    <div class="cta-container">
+                        <a class="btn btn-primary btn-cta" href="https://github.com/deelbak/Web-Dev2" target="_blank"><i class="fa fa-cloud-download"></i>Let know about WD</a>
+                    </div> 
+                </div> 
+                <div id="cards-wrapper" class="cards-wrapper row">
+                    <div class="item item-green">
+                        <div class="item-inner">
+                            <div class="icon-holder">
+                                <i class="icon fa fa-paper-plane"></i>
+                            </div> 
+                            <h3 class="title">Districts</h3>
+                            <p class="intro">Demo example, 8 districts of Almaty</p>
+                            <a class="link" [routerLink]="['/districts']"><span></span></a>
+                        </div> 
+                    </div> 
+                    <div class="item item-primary ">
+                        <div class="item-inner">
+                            <div class="icon-holder">
+                                <span aria-hidden="true" class="icon icon_genius"></span>
+                            </div><!--//icon-holder-->
+                            <h3 class="title">Profil</h3>
+                            <p class="intro">About settings of Profil</p>
+                            <a class="link" [routerLink]="['/profil']"><span></span></a>
+                        </div>
+                    </div> 
+                    <div class="item item-orange ">
+                        <div class="item-inner">
+                            <div class="icon-holder">
+                                <span aria-hidden="true" class="icon icon_gift"></span>
+                            </div> 
+                            <h3 class="title">Cart</h3>
+                            <p class="intro">Here you can find your products, which you wish to buy</p>
+                            <a class="link" [routerLink]="['/cart']"><span></span></a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+    </div>
 
-<router-outlet></router-outlet>
+  </ng-container>
+</body>

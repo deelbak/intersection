@@ -1,0 +1,13 @@
+<p>districts works!</p>
+<fieldset>
+    <label>District: </label>
+    <input type="text" [(ngModel)]="newDistrict">
+    <button (click)="addDistrict()">Add district</button>
+  </fieldset>
+
+  <ul>
+    <li *ngFor="let district of districts">
+      {{district.id}} - {{district.name}}
+      <button (click)="deleteDistrict(district.id)">X</button>
+    </li>
+  </ul>
